@@ -28,7 +28,11 @@ function render(){
     + '<div class="btns"><a class="btn dark" href="#research">' + T('Our research','연구 분야') + '</a>'
     + '<a class="btn" href="#join">' + T('Join us','모집 안내') + '</a></div></section>';
 
+  const fig = SITE.researchFigure === undefined ? 'images/research-overview.png' : SITE.researchFigure;
+  const cap = SITE.researchFigureCaption ? L(SITE.researchFigureCaption) : '';
   const research = '<section id="research"><h2>' + T('Research','연구 분야') + '</h2>'
+    + (fig ? '<figure class="overview"><img src="' + fig + '" alt="' + T('Research overview','연구 개요') + '" onerror="this.parentNode.remove()">'
+    + (cap ? '<figcaption>' + cap + '</figcaption>' : '') + '</figure>' : '')
     + SITE.areas.map(a => { const x = L(a);
       return '<div class="area"><div class="num">' + a.num + '</div><div><div class="a-title">' + x.t + '</div><div class="a-desc">' + x.d + '</div></div></div>'; }).join('')
     + '</section>';

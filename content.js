@@ -14,6 +14,14 @@ const SITE = {
   office: "Room 312, Engineering Building 12 (Building 103), Pusan National University",
   scholarUrl: "https://scholar.google.co.kr/citations?user=1FWcaAIAAAAJ",
 
+  /* 연구 개요 그림: images 폴더에 그림을 넣고 파일 이름을 적으세요.
+     그림을 빼려면 "" 로 비워두면 됩니다. */
+  researchFigure: "images/overview.png",
+  researchFigureCaption: {
+    en: "From open-loop predictive design to closed-loop, AI agent-driven optimization.",
+    kr: "예측 중심의 개방형 설계에서 AI 에이전트 기반의 폐루프 최적화로."
+  },
+
   hero: {
     en: { title: "Materials design, <em>automated</em>: AI proposes, agents execute, and discovery runs around the clock.",
           desc: "A³Mlab builds an agent-based automated research environment for materials design — generative models that propose new materials, multi-scale simulation that evaluates them, and AI agents that orchestrate the entire loop from hypothesis to validation." },
@@ -36,16 +44,14 @@ const SITE = {
                    kr: { t: "자동화", d: "계획·실행·분석을 AI 에이전트가 수행하는 에이전트 기반 자동화 연구 — 사람의 병목 없이 설계 루프를 닫습니다." } }
   ],
 
-  // 연구 분야 (핵심 주제 4개 — 원하는 만큼 추가/삭제 가능, 쉼표로 구분)
+  // 연구 분야 (3개 — 추가/삭제 가능, 쉼표로 구분)
   areas: [
-    { num: "01", en: { t: "AI-driven materials design", d: "Generative and predictive models that propose new inorganic materials directly from target properties, and tell which candidates can actually be synthesized." },
-                 kr: { t: "AI 기반 소재 설계", d: "목표 물성으로부터 새로운 소재를 직접 제안하는 생성·예측 모델, 그리고 제안된 후보가 실제로 합성 가능한지 판별하는 모델을 개발합니다." }, tags: ["generative models", "inverse design", "synthesizability"] },
-    { num: "02", en: { t: "Automated & accelerated materials discovery", d: "AI agents, active learning, and uncertainty-aware ML/DFT screening that plan and run the search, shortening discovery from years to weeks." },
-                 kr: { t: "소재 설계 자동화·가속화", d: "AI 에이전트, 능동 학습, 불확실성 기반 ML/DFT 스크리닝으로 탐색 과정을 계획·실행하여 소재 발견에 걸리는 시간을 수년에서 수 주로 줄입니다." }, tags: ["AI agents", "active learning", "high-throughput"] },
-    { num: "03", en: { t: "Multi-scale simulation", d: "Quantum chemistry, ML potentials, and process-level models linked in one workflow, from electrons to device performance." },
-                 kr: { t: "멀티스케일 시뮬레이션", d: "양자화학 계산, 기계학습 포텐셜, 공정 수준 모델을 하나의 워크플로로 연결하여 전자 스케일부터 소자 성능까지 예측합니다." }, tags: ["DFT", "ML potentials", "process-to-device"] },
-    { num: "04", en: { t: "AI for Science", d: "Machine learning that carries chemical and physical knowledge, applied to catalysis, energy, and environmental materials." },
-                 kr: { t: "AI for Science", d: "화학·물리 지식을 담은 기계학습을 촉매, 에너지, 환경 소재 문제에 적용합니다." }, tags: ["catalysis", "energy materials", "chemistry + AI"] }
+    { num: "01", en: { t: "AI for Science", d: "We build AI models that learn from chemistry and physics, so they can predict how a material will behave and suggest new materials for catalysis, energy, and the environment." },
+                 kr: { t: "AI for Science", d: "화학·물리 원리를 학습한 AI 모델을 만들어, 소재가 어떤 성질을 가질지 미리 예측하고 촉매·에너지·환경 분야에 필요한 새로운 소재를 제안합니다." } },
+    { num: "02", en: { t: "Automated materials discovery", d: "AI agents plan experiments and simulations, learn from each result, and choose the next candidate on their own, cutting the time to find a new material from years to weeks." },
+                 kr: { t: "소재 탐색 자동화", d: "AI 에이전트가 계산과 실험을 스스로 계획하고, 결과로부터 배우며 다음 후보를 고르는 과정을 반복합니다. 새로운 소재를 찾는 데 걸리는 시간을 수년에서 수 주로 줄이는 것이 목표입니다." } },
+    { num: "03", en: { t: "Multi-scale simulation", d: "We connect simulations at every scale, from atoms and electrons to full devices and processes, to understand why a material works and how it will perform in real use." },
+                 kr: { t: "멀티스케일 시뮬레이션", d: "원자·전자 수준의 계산부터 소자와 공정 수준의 모델까지 여러 스케일의 시뮬레이션을 연결하여, 소재가 왜 그런 성능을 내는지 이해하고 실제 환경에서의 성능을 예측합니다." } }
   ],
 
   // 구성원: 교수 정보 + 이력

@@ -1,7 +1,7 @@
 /* 색·글꼴은 아래 변수만 바꾸면 전체에 반영됩니다 */
 :root{
-  --bg:#f9f6f2; --ink:#231e1b; --muted:#5a5450; --line:#d2cdc9; --fill:#ece7e3;
-  --accent:#9c4438; --accent-dark:#7f2117;
+  --bg:#fbfaf7; --ink:#15212d; --muted:#4d5866; --line:#dcdfe3; --fill:#f1eee8;
+  --accent:#1f5f99; --accent-dark:#d0561f; --teal:#d0561f;
   --serif:'Libre Caslon Text','Noto Sans KR',serif;
   --sans:'Archivo','Noto Sans KR',sans-serif;
 }
@@ -25,7 +25,7 @@ a:hover{color:var(--accent-dark);text-decoration:underline}
 section{padding:64px 0;border-bottom:1px solid var(--line)}
 section:last-child{border-bottom:0}
 h1{font-family:var(--serif);font-weight:400;font-size:clamp(28px,4.5vw,42px);line-height:1.25;margin:0 0 20px;max-width:22em}
-h1 em{color:var(--accent)}
+h1 em{color:var(--teal)}
 h2{font-family:var(--serif);font-weight:400;font-size:28px;margin:0 0 24px}
 .eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
 .lede{color:var(--muted);max-width:40em;margin:0 0 24px}
@@ -34,6 +34,9 @@ h2{font-family:var(--serif);font-weight:400;font-size:28px;margin:0 0 24px}
 .btn.dark{background:var(--ink);color:var(--bg)}
 .btn:hover{text-decoration:none;background:var(--accent);border-color:var(--accent);color:#fff}
 
+.overview{margin:0 0 32px;background:#fff;border:1px solid var(--line);padding:16px}
+.overview img{width:100%;height:auto;display:block}
+.overview figcaption{color:var(--muted);font-size:14px;margin-top:12px;font-style:italic}
 .area{display:grid;grid-template-columns:48px minmax(0,1fr);gap:16px;padding:18px 0;border-top:1px solid var(--line)}
 .num{font-family:var(--serif);color:var(--accent);font-size:18px}
 .a-title{font-weight:600;margin-bottom:4px}
