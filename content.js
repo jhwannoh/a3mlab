@@ -11,7 +11,7 @@ const SITE = {
   emailUser: "jhwan",                    // 이메일 @ 앞부분
   emailDomain: "pusan.ac.kr",            // 이메일 @ 뒷부분
   showOffice: true,                      // false로 바꾸면 연구실 위치를 페이지에 표시하지 않습니다
-  office: "Room 312, Engineering Building 12 (Building 103), Pusan National University",
+  office: "Room 321, Engineering Building 12 (Building 103), Pusan National University",
   scholarUrl: "https://scholar.google.co.kr/citations?user=1FWcaAIAAAAJ",
 
   /* 연구 개요 그림: images 폴더에 그림을 넣고 파일 이름을 적으세요.
@@ -30,8 +30,8 @@ const SITE = {
   },
 
   recruit: {
-    en: { tag: "OPEN POSITIONS · 2026", text: "We are recruiting our founding cohort of MS/PhD students and interns." },
-    kr: { tag: "모집 공고 · 2026", text: "창립 멤버가 될 석박사과정 및 인턴을 모집합니다." }
+    en: { tag: "OPEN POSITIONS · 2026", text: "We are recruiting MS/PhD students and interns." },
+    kr: { tag: "모집 공고 · 2026", text: "석박사과정 및 인턴을 모집합니다." }
   },
 
   // 홈 화면 하단 3개 키워드 카드
