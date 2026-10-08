@@ -6,6 +6,46 @@ const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
 
 function toggleLang(){ lang = lang === 'en' ? 'kr' : 'en'; render(); }
 
+/* 모집 팝업: '오늘 하루 보지 않기'를 누르면 그날은 다시 뜨지 않습니다 */
+const POP_KEY = 'a3mlab-recruit-hide';
+const today = () => new Date().toISOString().slice(0, 10);
+function openRecruit(){ document.getElementById('recruitPop').hidden = false; }
+function closeRecruit(hideToday){
+  document.getElementById('recruitPop').hidden = true;
+  if (hideToday) try { localStorage.setItem(POP_KEY, today()); } catch(e){}
+}
+/* 메일 주소 복사: 주소는 소스에 통째로 두지 않고 실행 중에 조립합니다 */
+function copyRecruitEmail(btn){
+  const addr = SITE.emailUser + String.fromCharCode(64) + SITE.emailDomain;
+  const done = () => { const m = document.getElementById('rpCopied'); m.hidden = false; btn.classList.add('copied'); };
+  if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(addr).then(done, () => fallbackCopy(addr, done));
+  else fallbackCopy(addr, done);
+}
+function fallbackCopy(t, cb){
+  const x = document.createElement('textarea'); x.value = t; x.style.position = 'fixed'; x.style.opacity = '0';
+  document.body.appendChild(x); x.select(); try { document.execCommand('copy'); } catch(e){} x.remove(); cb();
+}
+function renderRecruit(){
+  const r = SITE.recruit;
+  if (!r || r.show === false) return;
+  let pop = document.getElementById('recruitPop');
+  if (pop) return;
+  pop = document.createElement('div'); pop.id = 'recruitPop'; pop.className = 'rp-back'; pop.hidden = true; pop.lang = 'ko';
+  document.body.appendChild(pop);
+  pop.addEventListener('click', e => { if (e.target === pop) closeRecruit(false); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeRecruit(false); });
+  pop.innerHTML = '<div class="rp" role="dialog" aria-modal="true" aria-labelledby="rpTitle">'
+    + '<button class="rp-x" type="button" aria-label="닫기" onclick="closeRecruit(false)">×</button>'
+    + '<div class="rp-tag">' + r.tag + '</div><h3 id="rpTitle">' + r.title + '</h3><p>' + r.text + '</p>'
+    + '<ul>' + r.items.map(i => '<li>' + i + '</li>').join('') + '</ul>'
+    + '<button class="rp-email" type="button" onclick="copyRecruitEmail(this)"><span class="rp-email-addr">' + SITE.emailUser + '<span>&#64;</span>' + SITE.emailDomain + '</span><span class="rp-email-hint">클릭하여 복사</span></button>'
+    + '<p class="rp-copied" id="rpCopied" role="status" hidden>메일 주소가 복사되었습니다.<br>이름, 지원 과정(석사·박사·학부연구생), 관심 분야, 간단한 자기소개를 적어 메일을 보내주세요.</p>'
+    + '<button class="rp-later" type="button" onclick="closeRecruit(true)">오늘 하루 보지 않기</button></div>';
+  const fab = document.createElement('button'); fab.id = 'recruitFab'; fab.type = 'button'; fab.className = 'rp-fab'; fab.onclick = openRecruit;
+  fab.innerHTML = '<span class="rp-dot"></span>' + r.badge;
+  document.body.appendChild(fab);
+}
+
 /* 이메일은 소스에 통째로 두지 않고, 버튼을 누를 때 조립합니다 */
 function revealEmail(el){
   const a = SITE.emailUser + String.fromCharCode(64) + SITE.emailDomain;
@@ -68,5 +108,10 @@ function render(){
     + '</div></section>';
 
   document.getElementById('main').innerHTML = about + research + piSec + pubs + join;
+  renderRecruit();
 }
 render();
+if (SITE.recruit && SITE.recruit.show !== false) {
+  let hidden = false; try { hidden = localStorage.getItem(POP_KEY) === today(); } catch(e){}
+  if (!hidden) setTimeout(openRecruit, 600);
+}
