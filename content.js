@@ -35,7 +35,7 @@ const SITE = {
     show: true,
     tag: "모집 공고",
     title: "연구실 구성원을 모집합니다",
-    text: "다양한 분야에 대한 AI+X 연구에 함께할 분을 기다립니다. (소정의 연구지원비 지급)",
+    text: "AI와 시뮬레이션으로 새로운 소재를 찾는 연구에 함께할 분을 기다립니다. (소정의 연구지원비 지급)",
     items: ["석사·박사과정 대학원생", "학부연구생"],
     badge: "모집중 (Recruiting)"
   },
@@ -91,7 +91,19 @@ const SITE = {
   members: [
     { name: "산지니 Sanjini", joined: "2026", photo: "",
       en: { role: "Virtual Researcher (PNU mascot)", topic: "PNU's eagle mascot, holding the seat warm for A³Mlab's founding students." },
-      kr: { role: "가상 연구원 (부산대 마스코트)", topic: "부산대 독수리 마스코트. 창립 멤버가 올 때까지 자리를 지키고 있습니다." } }
+      kr: { role: "가상 연구원 (부산대 마스코트)", topic: "부산대 독수리 마스코트. 창립 멤버가 올 때까지 자리를 지키고 있습니다." } },
+    { name: "박도균 Dogyun Park", joined: "2026-Fall", photo: "",
+      en: { role: "Undergraduate Researcher", topic: "" },
+      kr: { role: "학부연구생", topic: "" } },
+    { name: "노현서", joined: "2026-Fall", photo: "",
+      en: { role: "Undergraduate Researcher", topic: "" },
+      kr: { role: "학부연구생", topic: "" } },
+    { name: "송윤지 Yunji Song", joined: "2026-Fall", photo: "",
+      en: { role: "Undergraduate Researcher", topic: "" },
+      kr: { role: "학부연구생", topic: "" } },
+    { name: "장영서", joined: "2026-Fall", photo: "",
+      en: { role: "Undergraduate Researcher", topic: "" },
+      kr: { role: "학부연구생", topic: "" } }
     /* ═══ 새 학생 추가 위치: 위 항목 뒤에 쉼표(,)를 찍고 아래 형식을 복사해 붙이세요 ═══
     ,{ name: "이름", joined: "2027", photo: "",
       en: { role: "MS Student", topic: "연구 주제(영문)" },

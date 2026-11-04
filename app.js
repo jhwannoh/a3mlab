@@ -56,7 +56,7 @@ function render(){
   document.documentElement.lang = lang === 'en' ? 'en' : 'ko';
   document.getElementById('langBtn').textContent = T('한국어', 'English');
   document.getElementById('nav').innerHTML = [
-    ['about', T('About','소개')], ['research', T('Research','연구')], ['pi', T('PI','교수')],
+    ['about', T('About','소개')], ['research', T('Research','연구')], ['pi', T('PI','교수')], ['members', T('Members','구성원')],
     ['publications', T('Publications','논문')], ['join', T('Join Us','모집')]
   ].map(([id, t]) => '<a href="#' + id + '">' + t + '</a>').join('');
 
@@ -88,6 +88,18 @@ function render(){
       + pi.awards.map(a => '<div class="cv"><div class="cv-y">' + a.year + '</div><div>' + L(a) + '</div></div>').join('') : '')
     + '</div></div></section>';
 
+  /* 구성원(학생) 섹션: content.js의 members 목록을 카드로 표시합니다 */
+  const mem = SITE.members || [];
+  const membersSec = mem.length ? '<section id="members"><h2>' + T('Members','구성원') + '</h2><div class="members">'
+    + mem.map(m => { const x = L(m);
+      return '<div class="member">'
+        + (m.photo ? '<img class="m-photo" src="' + m.photo + '" alt="' + m.name + '" onerror="this.remove()">' : '')
+        + '<div class="m-name">' + m.name + '</div>'
+        + '<div class="m-role">' + x.role + (m.joined ? ' · ' + T('Joined ', '') + m.joined + T('', ' 합류') : '') + '</div>'
+        + (x.topic ? '<div class="m-topic">' + x.topic + '</div>' : '')
+        + '</div>'; }).join('')
+    + '</div></section>' : '';
+
   const groups = {};
   PUBLICATIONS.forEach(p => (groups[p.year] = groups[p.year] || []).push(p));
   const pubs = '<section id="publications"><div class="pub-head"><h2>' + T('Publications','논문') + '</h2>'
@@ -107,7 +119,7 @@ function render(){
     + (SITE.showOffice === false ? '' : '<p style="margin:12px 0 0;color:var(--muted);font-size:14px">' + SITE.office + '</p>')
     + '</div></section>';
 
-  document.getElementById('main').innerHTML = about + research + piSec + pubs + join;
+  document.getElementById('main').innerHTML = about + research + piSec + membersSec + pubs + join;
   renderRecruit();
 }
 render();

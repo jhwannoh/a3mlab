@@ -52,6 +52,14 @@ h2{font-family:var(--serif);font-weight:400;font-size:28px;margin:0 0 24px}
 .pi-title{color:var(--muted);font-size:15px}
 .cv{display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;padding:12px 0;border-top:1px solid var(--line)}
 .cv-y{color:var(--accent);font-size:14px;font-weight:500;white-space:nowrap}
+/* 구성원 카드 */
+.members{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+.member{border-top:2px solid var(--accent);background:var(--fill);padding:16px 18px}
+.m-photo{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;margin-bottom:12px}
+.m-name{font-family:var(--serif);font-size:18px;margin-bottom:4px}
+.m-role{color:var(--accent);font-size:13px;font-weight:500}
+.m-topic{color:var(--muted);font-size:14px;margin-top:8px}
+
 .pub-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
 .year{font-family:var(--serif);color:var(--accent);font-size:18px;padding:16px 0 4px;border-bottom:1px solid var(--line)}
 .pub{padding:12px 0}
