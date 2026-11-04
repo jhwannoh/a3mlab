@@ -89,9 +89,6 @@ const SITE = {
   /* ── 연구원(학생) 목록: 새 학생이 오면 아래 형식을 복사해 한 줄 추가 ──
      사진을 넣으려면 photo: "사진파일.jpg" 처럼 파일명을 적으세요 (없으면 "") */
   members: [
-    { name: "산지니 Sanjini", joined: "2026", photo: "",
-      en: { role: "Virtual Researcher (PNU mascot)", topic: "PNU's eagle mascot, holding the seat warm for A³Mlab's founding students." },
-      kr: { role: "가상 연구원 (부산대 마스코트)", topic: "부산대 독수리 마스코트. 창립 멤버가 올 때까지 자리를 지키고 있습니다." } },
     { name: "박도균 Dogyun Park", joined: "2026-Fall", photo: "",
       en: { role: "Undergraduate Researcher", topic: "" },
       kr: { role: "학부연구생", topic: "" } },
@@ -104,6 +101,9 @@ const SITE = {
     { name: "장영서", joined: "2026-Fall", photo: "",
       en: { role: "Undergraduate Researcher", topic: "" },
       kr: { role: "학부연구생", topic: "" } }
+    { name: "산지니 Sanjini", joined: "2026", photo: "",
+      en: { role: "Virtual Researcher (PNU mascot)", topic: "PNU's eagle mascot, holding the seat warm for A³Mlab's founding students." },
+      kr: { role: "가상 연구원 (부산대 마스코트)", topic: "부산대 독수리 마스코트. 창립 멤버가 올 때까지 자리를 지키고 있습니다." } },
     /* ═══ 새 학생 추가 위치: 위 항목 뒤에 쉼표(,)를 찍고 아래 형식을 복사해 붙이세요 ═══
     ,{ name: "이름", joined: "2027", photo: "",
       en: { role: "MS Student", topic: "연구 주제(영문)" },
