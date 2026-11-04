@@ -103,7 +103,7 @@ const SITE = {
       kr: { role: "학부연구생", topic: "" } },
     { name: "산지니 Sanjini", joined: "2026", photo: "",
       en: { role: "Virtual Researcher (PNU mascot)", topic: "PNU's eagle mascot, holding the seat warm for A³Mlab's founding students." },
-      kr: { role: "가상 연구원 (부산대 마스코트)", topic: "부산대 독수리 마스코트. 창립 멤버가 올 때까지 자리를 지키고 있습니다." } },
+      kr: { role: "가상 연구원 (부산대 마스코트)", topic: "부산대 독수리 마스코트. 창립 멤버가 올 때까지 자리를 지키고 있습니다." } }
     /* ═══ 새 학생 추가 위치: 위 항목 뒤에 쉼표(,)를 찍고 아래 형식을 복사해 붙이세요 ═══
     ,{ name: "이름", joined: "2027", photo: "",
       en: { role: "MS Student", topic: "연구 주제(영문)" },
