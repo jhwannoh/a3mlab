@@ -6,6 +6,13 @@
    ═══════════════════════════════════════════════════════════════ */
 const PUBLICATIONS = [
  {
+  "title": "Rational Design of Perovskite Precursor Inks for Dip-Coated Perovskite Solar Cells",
+  "authors": "E Hwang, H Na, M Kim, N Kwon, J Noh, JS Kim, YY Kim, J Park, S Choi, J Seo",
+  "venue": "ACS Energy Letters, 2026",
+  "year": 2026,
+  "url": "https://doi.org/10.1021/acsenergylett.6c02079"
+ },
+ {
   "title": "Evaluating global optimization and generative methods for low-energy and diverse crystal structure prediction via two case studies",
   "authors": "S An, S Kim, J Kim, J Noh, Z Allahyari, AR Oganov, CJ Pickard, A Aspuru-Guzik, Y Jung",
   "venue": "Digital Discovery, 2026",
